@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여온(與溫) | 따뜻함으로 공기를 바꾸다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 컬러 팔레트 전면 수정 (Warm Tone) */
+            --warm-dark-base: #262422; /* 깊이 있는 따뜻한 차콜 브라운 */
+            --warm-cream-text: #F5F5F0; /* 부드러운 크림 아이보리 텍스트 */
+            --rich-amber-gold: #D4AF37; /* 풍부한 앰버 골드 하이라이트 */
+            --muted-warm-text: #A8A29E; /* 차분한 웜 그레이 텍스트 */
+        }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: var(--warm-dark-base); color: var(--warm-cream-text); overflow-x: hidden; }
+        .serif { font-family: 'Noto Serif KR', serif; }
+        
+        /* 따뜻하게 감싸는 앰버 글로우 배경 효과 */
+        .ambient-warmth {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            /* 아래에서 위로 따뜻한 빛이 올라오는 느낌 */
+            background: radial-gradient(circle at 50% 110%, rgba(212, 175, 55, 0.25), rgba(38, 36, 34, 0) 65%);
+            pointer-events: none; z-index: 0;
+            transition: all 2s ease;
+        }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 1.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .text-highlight { color: var(--rich-amber-gold); font-weight: 600; }
+        .text-muted-warm { color: var(--muted-warm-text); }
+
+        .cta-button {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--rich-amber-gold); padding: 22px 65px; border-radius: 2px;
+            font-family: 'Noto Serif KR'; font-size: 1.1rem; transition: 0.5s; letter-spacing: 0.1em;
+        }
+        .cta-button:hover { background: rgba(212, 175, 55, 0.15); border-color: var(--rich-amber-gold); color: #fff; box-shadow: 0 0 40px rgba(212, 175, 55, 0.2); }
+
+        /* 세련된 웜톤 구분선 */
+        .vertical-line { width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, rgba(245, 245, 240, 0.2), transparent); margin: 3rem auto; }
+        
+        /* 텍스트의 질감 표현 */
+        .texture-text { color: rgba(245, 245, 240, 0.8); line-height: 2.2; font-weight: 300; word-break: keep-all; }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-warmth"></div>
+
+    <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative z-10">
+        <p class="fade-in text-muted-warm text-xs tracking-[0.5em] mb-12 uppercase">The Temperature of Law</p>
+        <h1 class="serif text-4xl md:text-6xl font-light leading-snug fade-in mb-10">
+            당신이 마주한 법은<br>
+            언제나 <span class="font-bold text-highlight">가장 차가운 온도</span>였습니다.
+        </h1>
+        <p class="fade-in texture-text text-lg md:text-xl">
+            철창의 냉기, 서류의 날카로움, 그리고 얼어붙은 관계들.<br>
+            이 차가움 속에 홀로 서 계십니까?
+        </p>
+        <div class="vertical-line fade-in"></div>
+    </section>
+
+    <section class="py-40 px-6 relative z-10 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-3xl md:text-5xl font-normal mb-20 fade-in leading-snug">
+                "여온은 차가운 법(法)에<br>
+                <span class="text-highlight italic">사람의 체온</span>을 더합니다."
+            </h2>
+
+            <div class="space-y-24">
+                <div class="fade-in">
+                    <p class="serif text-2xl mb-6 text-white">얼어붙은 당신에게는 <span class="text-highlight">'온기'</span>를</p>
+                    <p class="texture-text text-lg">
+                        떨고 있는 마음이 진정될 수 있도록.<br>
+                        차가운 세상으로부터 당신을 보호하는 가장 따뜻한 방패가 되겠습니다.<br>
+                        우리는 당신을 심판하지 않습니다. 그저 곁을 지킬 뿐입니다.
+                    </p>
+                </div>
+
+                <div class="fade-in">
+                    <p class="serif text-2xl mb-6 text-white">굳게 닫힌 상황에는 <span class="text-highlight">'향기'</span>를</p>
+                    <p class="texture-text text-lg">
+                        단순한 온기를 넘어, 공간의 공기를 바꿉니다.<br>
+                        날 선 대립과 오해가 부드럽게 녹아내릴 수 있도록.<br>
+                        차가운 논리 위에 <b>'사람의 향기'</b>를 더해, 닫힌 문을 엽니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 px-6 text-center relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="vertical-line fade-in" style="height: 100px; background: linear-gradient(to bottom, transparent, var(--rich-amber-gold), transparent);"></div>
+            
+            <h3 class="serif text-3xl md:text-5xl font-light mb-16 fade-in leading-tight">
+                온기가 스며들면<br>
+                반드시 <span class="text-highlight">해빙(解氷)</span>은 시작됩니다.
+            </h3>
+            
+            <p class="fade-in texture-text text-lg mb-20">
+                얼어있던 당신의 일상도,<br>
+                차갑게 식어버린 그들과의 관계도.<br><br>
+                더불어 따뜻하게 녹여내는 것.
+            </p>
+        </div>
+    </section>
+
+    <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative z-10">
+        <h2 class="serif text-5xl md:text-8xl font-bold mb-10 fade-in text-highlight italic tracking-tight">
+            여온하다
+        </h2>
+        <p class="fade-in text-lg md:text-2xl text-muted-warm font-light mb-24 tracking-widest">
+            (與溫)
+        </p>
+        
+        <div class="fade-in">
+            <button class="cta-button" onclick="alert('프라이빗 라운지로 안내합니다.')">
+                가장 따뜻한 대피소 입장하기
+            </button>
+            <p class="mt-8 text-xs text-muted-warm tracking-wider uppercase">
+                Private & Secure Sanctuary
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
